@@ -35,6 +35,11 @@ function nextSequence() {
     palySound(randomChosenColour);
     $("#" + randomChosenColour).fadeOut(100).fadeIn(100);
     $("#level-title").text("Level " + level);
+    if (level === 0) {
+        $("#game-info").text("Simon game is a memory game. On start game will blink a tile and you have to click on that tile and continue the pattern from the begining when next tile is blinked.");
+    } else {
+        $("#game-info").text("");
+    }
     level += 1;
 
 }
@@ -58,7 +63,7 @@ function checkAnswer(currentLevel) {
             setTimeout(function () {
                 palySound("success");
             }, 100);
-            
+
             userClickedPattern = [];
             setTimeout(function () {
                 nextSequence();
@@ -69,9 +74,9 @@ function checkAnswer(currentLevel) {
         // console.log("wrong");
         palySound("wrong");
         $("body").addClass("game-over");
-        setTimeout(function(){
+        setTimeout(function () {
             $("body").removeClass("game-over");
-        },200); 
+        }, 200);
         $("#level-title").text("Game Over, Press Any Key to Restart ");
         started = false;
         level = 0;

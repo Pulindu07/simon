@@ -2,6 +2,10 @@ body {
   text-align: center;
   background-color: #011F3F;
 }
+p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: aliceblue;
+}
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
